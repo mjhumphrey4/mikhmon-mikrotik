@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', 
+                git branch: 'master', 
                 url: 'https://github.com/mjhumphrey4/mikhmon-mikrotik',
-                credentialsId: 'Mikhmon-Id'
+                credentialsId: 'Mikhmon-ID'
             }
         }
         stage('Sync to Host Server') {
