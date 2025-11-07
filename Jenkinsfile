@@ -4,8 +4,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://github.com/mjhumphrey4/onlifi-mikrotik',
-                credentialsId: 'onlifi-mikrotik'
+                url: 'https://github.com/mjhumphrey4/mikhmon-mikrotik',
+                credentialsId: 'Mikhmon-Id'
             }
         }
         stage('Sync to Host Server') {
