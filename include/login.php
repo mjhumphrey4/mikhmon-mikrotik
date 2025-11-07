@@ -164,7 +164,7 @@ session_start();
                 
                 <!-- Sign Up Link -->
                 <p class="signup-text">
-                    Default Mikhmon Logins <strong> Username:</strong> MikhMon <strong>Password:</strong> mikhmon
+                    Default Credentials - <strong> Username:</strong> mikhmon <strong>Password:</strong> 1234
                 </p>
             </form>
         </div>
