@@ -37,20 +37,7 @@ if (!isset($_SESSION["mikhmon"])) {
 // get routeboard info
   $getrouterboard = $API->comm("/system/routerboard/print");
   $routerboard = $getrouterboard[0];
-/*
-// move hotspot log to disk *
-  $getlogging = $API->comm("/system/logging/print", array("?prefix" => "->", ));
-  $logging = $getlogging[0];
-  if ($logging['prefix'] == "->") {
-  } else {
-    $API->comm("/system/logging/add", array("action" => "disk", "prefix" => "->", "topics" => "hotspot,info,debug", ));
-  }
 
-// get hotspot log
-  $getlog = $API->comm("/log/print", array("?topics" => "hotspot,info,debug", ));
-  $log = array_reverse($getlog);
-  $THotspotLog = count($getlog);
-*/
 // get & counting hotspot users
   $countallusers = $API->comm("/ip/hotspot/user/print", array("count-only" => ""));
   if ($countallusers < 2) {
@@ -74,45 +61,11 @@ if (!isset($_SESSION["mikhmon"])) {
     $logh = "350px";
     $lreport = "style='display:block;'";
   }
-/*
-// get selling report
-    $thisD = date("d");
-    $thisM = strtolower(date("M"));
-    $thisY = date("Y");
 
-    if (strlen($thisD) == 1) {
-      $thisD = "0" . $thisD;
-    } else {
-      $thisD = $thisD;
-    }
-
-    $idhr = $thisM . "/" . $thisD . "/" . $thisY;
-    $idbl = $thisM . $thisY;
-
-    $getSRHr = $API->comm("/system/script/print", array(
-      "?source" => "$idhr",
-    ));
-    $TotalRHr = count($getSRHr);
-    $getSRBl = $API->comm("/system/script/print", array(
-      "?owner" => "$idbl",
-    ));
-    $TotalRBl = count($getSRBl);
-
-    for ($i = 0; $i < $TotalRHr; $i++) {
-
-      $tHr += explode("-|-", $getSRHr[$i]['name'])[3];
-
-    }
-    for ($i = 0; $i < $TotalRBl; $i++) {
-
-      $tBl += explode("-|-", $getSRBl[$i]['name'])[3];
-    }
-  }*/
 }
 ?>
     
 <div id="reloadHome">
-
     <div id="r_1" class="row">
       <div class="col-4">
         <div class="box bmh-75 box-bordered">
@@ -234,10 +187,6 @@ if (!isset($_SESSION["mikhmon"])) {
   
                   <?php $getinterface = $API->comm("/interface/print");
                   $interface = $getinterface[$iface - 1]['name']; 
-                  /*$TotalReg = count($getinterface);
-                  for ($i = 0; $i < $TotalReg; $i++) {
-                    echo $getinterface[$i]['name'].'<br>';
-                  }*/
                   ?>
                   
                   <script type="text/javascript"> 

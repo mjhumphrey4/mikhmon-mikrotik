@@ -219,10 +219,7 @@ include('../lang/'.$langid.'.php');
     $lreport = "style='display:block;'";
   }
 
-
-
   ?>
-  
               <div id="r_3" class="row">
               <div class="card">
                 <div class="card-header">
