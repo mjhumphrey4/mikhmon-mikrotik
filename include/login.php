@@ -100,14 +100,13 @@ session_start();
             </svg>
         </div>
         
-        <h1 class="login-title">Bite Tech Systems</h1>
+        <h1 class="login-title">Mikhmon Hotspot Management System</h1>
         <p class="login-subtitle">Welcome back! Please login to continue</p>
         
         <!-- Login Card -->
         <div class="login-card">
             <h2 class="login-card-title">Login</h2>
-            <p class="login-card-subtitle">Enter your credentials to access your account</p>
-            
+
             <?php if(isset($error) && !empty($error)): ?>
             <div class="error-message">
                 <?= $error ?>
@@ -153,21 +152,7 @@ session_start();
                         >
                     </div>
                 </div>
-                
-                <!-- Remember Me & Forgot Password -->
-                <div class="form-options">
-                    <div class="checkbox-wrapper">
-                        <input 
-                            type="checkbox" 
-                            id="remember" 
-                            name="remember" 
-                            class="checkbox-input"
-                        >
-                        <label for="remember" class="checkbox-label">Remember me</label>
-                    </div>
-                    <a href="#" class="forgot-link">Forgot password?</a>
-                </div>
-                
+                             
                 <!-- Login Button -->
                 <button type="submit" name="login" class="btn-login">
                     Login
@@ -179,14 +164,14 @@ session_start();
                 
                 <!-- Sign Up Link -->
                 <p class="signup-text">
-                    Don't have an account? <a href="#" class="signup-link">Sign up now</a>
+                    Default Mikhmon Logins <strong> Username:</strong> MikhMon <strong>Password:</strong> mikhmon
                 </p>
             </form>
         </div>
         
         <!-- Footer -->
         <div class="login-footer">
-            © 2025 Bite Tech Systems Ltd. All rights reserved.
+            © 2025 Onlus Technologies. Credit to Mikhmon.
         </div>
     </div>
 
