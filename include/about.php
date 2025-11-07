@@ -74,7 +74,7 @@ if (!isset($_SESSION["mikhmon"])) {
   Terima kasih untuk semua yang telah mendukung pengembangan MIKHMON.
 </p>
 <div>
-    <i>Copyright &copy; <i> 2018 Laksamadi Guko</i></i>
+    <i>Copyright &copy; <i> 2025 Onlus Technologies. Original Mikhmon Code By: Laksamadi Guko</i></i>
 </div>
 </div>
 </div>
