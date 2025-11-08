@@ -58,24 +58,11 @@ if (!isset($_SESSION["mikhmon"])) {
     document.getElementById('addRouterModal').classList.remove('active');
   }
   
-  function openPasswordModal() {
-    document.getElementById('passwordModal').classList.add('active');
-  }
-  
-  function closePasswordModal() {
-    document.getElementById('passwordModal').classList.remove('active');
-  }
-  
   // Close modal when clicking outside
   document.addEventListener('click', function(event) {
-    const addModal = document.getElementById('addRouterModal');
-    const passwordModal = document.getElementById('passwordModal');
-    
-    if (event.target === addModal) {
+    const modal = document.getElementById('addRouterModal');
+    if (event.target === modal) {
       closeAddRouterModal();
-    }
-    if (event.target === passwordModal) {
-      closePasswordModal();
     }
   });
   
@@ -117,7 +104,7 @@ if (!isset($_SESSION["mikhmon"])) {
   <i class="fa fa-moon" id="theme-icon"></i>
 </button>
 
-<!-- Page Header rest -->
+<!-- Page Header -->
 <div class="sessions-header">
   <div class="sessions-title">
     <h2><?= $_admin_settings ?></h2>
@@ -134,12 +121,10 @@ if (!isset($_SESSION["mikhmon"])) {
   <h3 class="section-title">Available Routers</h3>
   <div class="routers-grid">
     <?php
-    $hasRouters = false;
     foreach (file('./include/config.php') as $line) {
       $value = explode("'", $line)[1];
       if ($value == "" || $value == "mikhmon") {
       } else { 
-        $hasRouters = true;
         $hotspotName = explode('%', $data[$value][4])[1];
         $sessionName = $value;
         
@@ -198,23 +183,6 @@ if (!isset($_SESSION["mikhmon"])) {
     <?php
       }
     }
-    
-    // Show empty state if no routers
-    if (!$hasRouters) {
-    ?>
-      <div class="empty-router-card">
-        <div class="empty-router-icon">
-          <i class="fa fa-server"></i>
-        </div>
-        <h3 class="empty-router-title">It's time to add a router</h3>
-        <p class="empty-router-subtitle">Connect your first MikroTik router to start managing your network</p>
-        <button class="btn-add-first-router" onclick="openAddRouterModal()">
-          <i class="fa fa-plus"></i>
-          Add Your First Router
-        </button>
-      </div>
-    <?php
-    }
     ?>
   </div>
 </div>
@@ -223,15 +191,45 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="routers-section">
   <h3 class="section-title"><i class="fa fa-user-circle"></i> <?= $_admin ?> Settings</h3>
   <div class="admin-settings-card">
-    <button class="btn-change-password" onclick="openPasswordModal()">
-      <i class="fa fa-key"></i>
-      Change Admin Password
-    </button>
-    
-    <div class="version-info">
-      <div id="loadV">v<?= $_SESSION['v']; ?></div>
-      <div><b id="newVer" class="text-green"></b></div>
-    </div>
+    <form autocomplete="off" method="post" action="">
+      <div class="settings-form-group">
+        <label class="settings-label"><?= $_user_name ?></label>
+        <input class="settings-input" id="useradm" type="text" name="useradm" title="User Admin" value="<?= $useradm; ?>" required="1"/>
+      </div>
+      
+      <div class="settings-form-group">
+        <label class="settings-label"><?= $_password ?></label>
+        <div class="password-wrapper">
+          <input class="settings-input" id="passadm" type="password" name="passadm" title="Password Admin" value="<?= decrypt($passadm); ?>" required="1" style="padding-right: 45px;"/>
+          <span class="password-toggle" onclick="Pass('passadm')">
+            <i class="fa fa-eye"></i>
+          </span>
+        </div>
+      </div>
+      
+      <div class="settings-form-group">
+        <label class="settings-label"><?= $_quick_print ?> QR</label>
+        <select class="settings-input" name="qrbt">
+          <option><?= $qrbt ?></option>
+          <option>enable</option>
+          <option>disable</option>
+        </select>
+      </div>
+      
+      <div class="settings-actions">
+        <button class="btn-save" type="submit" name="save">
+          <i class="fa fa-save"></i> <?= $_save ?>
+        </button>
+        <button class="btn-reload" type="button" onclick="location.reload();">
+          <i class="fa fa-refresh"></i>
+        </button>
+      </div>
+      
+      <div class="version-info">
+        <div id="loadV">v<?= $_SESSION['v']; ?></div>
+        <div><b id="newVer" class="text-green"></b></div>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -276,53 +274,6 @@ if (!isset($_SESSION["mikhmon"])) {
           <i class="fa fa-check"></i> Add Router
         </button>
         <button class="btn-reload" type="button" onclick="closeAddRouterModal()">
-          Cancel
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<!-- Change Password Modal -->
-<div class="modal-overlay" id="passwordModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title">Change Admin Password</h3>
-      <button class="modal-close" onclick="closePasswordModal()">
-        <i class="fa fa-times"></i>
-      </button>
-    </div>
-    
-    <form autocomplete="off" method="post" action="">
-      <div class="settings-form-group">
-        <label class="settings-label"><?= $_user_name ?></label>
-        <input class="settings-input" id="useradm" type="text" name="useradm" title="User Admin" value="<?= $useradm; ?>" required="1"/>
-      </div>
-      
-      <div class="settings-form-group">
-        <label class="settings-label"><?= $_password ?></label>
-        <div class="password-wrapper">
-          <input class="settings-input" id="passadm" type="password" name="passadm" title="Password Admin" value="<?= decrypt($passadm); ?>" required="1" style="padding-right: 45px;"/>
-          <span class="password-toggle" onclick="Pass('passadm')">
-            <i class="fa fa-eye"></i>
-          </span>
-        </div>
-      </div>
-      
-      <div class="settings-form-group">
-        <label class="settings-label"><?= $_quick_print ?> QR</label>
-        <select class="settings-input" name="qrbt">
-          <option><?= $qrbt ?></option>
-          <option>enable</option>
-          <option>disable</option>
-        </select>
-      </div>
-      
-      <div class="settings-actions">
-        <button class="btn-save" type="submit" name="save">
-          <i class="fa fa-save"></i> <?= $_save ?>
-        </button>
-        <button class="btn-reload" type="button" onclick="closePasswordModal()">
           Cancel
         </button>
       </div>
