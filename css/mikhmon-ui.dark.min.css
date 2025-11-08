@@ -1012,10 +1012,10 @@ button {
   clear: both;
 }
 
-.input-group-1 { width: 8.33%; }
-.input-group-2 { width: 16.66%; }
+.input-group-1 { width: 8.33%; min-width: 60px; }
+.input-group-2 { width: 16.66%; min-width: 80px; }
 .input-group-3 { width: 25%; }
-.input-group-4 { width: 33.33%; }
+.input-group-4 { width: 33.33%; min-width: 120px; }
 .input-group-5 { width: 41.66%; }
 .input-group-6 { width: 50%; }
 .input-group-7 { width: 58.33%; }
@@ -1320,6 +1320,114 @@ input {
   color: #60a5fa !important;
 }
 
+/* Input Group Styling Fix */
+.input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group .group-item {
+  flex: 1;
+  margin: 0;
+}
+
+.input-group .group-item:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .group-item:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .group-item:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+/* Ensure buttons and inputs in input-groups are visible */
+.input-group input[type="submit"],
+.input-group input[type="button"],
+.input-group button {
+  background-color: #0066ff;
+  color: #ffffff;
+  border: 1px solid #0052cc;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.input-group input[type="submit"]:hover,
+.input-group input[type="button"]:hover,
+.input-group button:hover {
+  background-color: #0052cc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+}
+
+/* Select dropdown styling */
+select.form-control,
+select.group-item {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e4e4e7' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Table improvements for sessions page */
+.table.table-sm td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* Icon button styling */
+.fa.pointer {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.fa.pointer:hover {
+  color: #0ea5e9;
+  transform: scale(1.1);
+}
+
+/* Link colors in tables and cards */
+.card-body a,
+.table a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-body a:hover,
+.table a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* Version display styling */
+#loadV {
+  margin-top: 16px;
+  padding: 8px 12px;
+  background: #374151;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+#newVer {
+  margin-top: 8px;
+  display: block;
+}
+
 /* Responsive column utilities for mobile */
 @media screen and (max-width: 750px) {
   .col-box-1 { width: 8.33%; }
@@ -1334,5 +1442,10 @@ input {
   .col-box-10 { width: 83.33%; }
   .col-box-11 { width: 91.66%; }
   .col-box-12 { width: 100%; }
+  
+  /* Stack columns on mobile */
+  .col-6 {
+    width: 100%;
+    margin-bottom: 16px;
+  }
 }
-
