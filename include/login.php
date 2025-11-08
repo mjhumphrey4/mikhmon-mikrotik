@@ -171,7 +171,7 @@ session_start();
         
         <!-- Footer -->
         <div class="login-footer">
-            © 2025 Onlus Technologies. Credit to Mikhmon.
+            © 2025 Onlus Technologies. Credit to Mikhmon by: Laksamadi Guko.
         </div>
     </div>
 
