@@ -39,7 +39,7 @@ if (!isset($_SESSION["mikhmon"])) {
 ?>
 
 <!-- Load CSS based on theme -->
-<link rel="stylesheet" href="./css/mikhmon-ui.light.min.css" id="theme-stylesheet">
+<link rel="stylesheet" href="./css/sessions.css" id="theme-stylesheet">
 
 <script>
   function Pass(id){
@@ -86,11 +86,11 @@ if (!isset($_SESSION["mikhmon"])) {
     const currentTheme = localStorage.getItem('theme') || 'light';
     
     if (currentTheme === 'light') {
-      stylesheet.href = './css/mikhmon-ui.dark.min.css';
+      stylesheet.href = './css/sessions-dark.css';
       themeIcon.className = 'fa fa-sun';
       localStorage.setItem('theme', 'dark');
     } else {
-      stylesheet.href = './css/mikhmon-ui.light.min.css';
+      stylesheet.href = './css/sessions.css';
       themeIcon.className = 'fa fa-moon';
       localStorage.setItem('theme', 'light');
     }
@@ -103,10 +103,10 @@ if (!isset($_SESSION["mikhmon"])) {
     const themeIcon = document.getElementById('theme-icon');
     
     if (savedTheme === 'dark') {
-      stylesheet.href = './css/mikhmon-ui.dark.min.css';
+      stylesheet.href = './css/sessions-dark.css';
       themeIcon.className = 'fa fa-sun';
     } else {
-      stylesheet.href = './css/mikhmon-ui.light.min.css';
+      stylesheet.href = './css/sessions.css';
       themeIcon.className = 'fa fa-moon';
     }
   });
