@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 // hide all error
 error_reporting(0);
 

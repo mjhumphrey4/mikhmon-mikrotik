@@ -14,9 +14,9 @@ $url = $_SERVER['REQUEST_URI'];
 // load session MikroTik
 $session = $_GET['session'];
 $id = $_GET['id'];
-$c = $_GET['c'];
+//$c = $_GET['c'];
 $router = $_GET['router'];
-$logo = $_GET['logo'];
+//$logo = $_GET['logo'];
 
 $ids = array(
   "editor",
