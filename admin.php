@@ -76,7 +76,7 @@ if ($id == "login" || substr($url, -1) == "p") {
 
 } elseif ($id == "sessions") {
   $_SESSION["connect"] = "";
-  include_once('./include/menu.php');
+
   include_once('./settings/sessions.php');
 } elseif ($id == "settings" && !empty($session) || $id == "settings" && !empty($router)) {
   include_once('./include/menu.php');
