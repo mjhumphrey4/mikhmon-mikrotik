@@ -169,7 +169,7 @@ session_start();
             </form>
         </div>
         
-        <!-- Footer -->
+        <!-- Footer. Just to apply changes-->
         <div class="login-footer">
             © 2025 Onlus Technologies. Credit to Mikhmon by: Laksamadi Guko.
         </div>
