@@ -117,7 +117,7 @@ if (!isset($_SESSION["mikhmon"])) {
   <i class="fa fa-moon" id="theme-icon"></i>
 </button>
 
-<!-- Page Header -->
+<!-- Page Header rest -->
 <div class="sessions-header">
   <div class="sessions-title">
     <h2><?= $_admin_settings ?></h2>
