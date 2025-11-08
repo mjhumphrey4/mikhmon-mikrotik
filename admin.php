@@ -12,7 +12,7 @@ ob_start("ob_gzhandler");
 $url = $_SERVER['REQUEST_URI'];
 
 // load session MikroTik
-$session = $_GET['session'];
+//$session = $_GET['session'];
 $id = $_GET['id'];
 //$c = $_GET['c'];
 $router = $_GET['router'];
