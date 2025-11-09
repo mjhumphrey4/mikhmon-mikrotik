@@ -1,4 +1,4 @@
-/* Modern Router Manager Styles - Dark Mode */
+/* Modern Router Manager Styles - Dark Mode - Improved Spacing */
 
 /* Base & Typography */
 body {
@@ -23,7 +23,7 @@ a {
   transition: all 0.2s ease;
 }
 
-/* Navbar - Modern Blue Design */
+/* Navbar - Modern Blue Design - IMPROVED ALIGNMENT */
 .navbar {
   position: fixed;
   overflow: hidden;
@@ -34,25 +34,41 @@ a {
   height: 64px;
   border-bottom: 1px solid #1f2937;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 8px;
+  padding-right: 16px;
 }
 
 .navbar-left a, .navbar-right a {
-  text-align: center;
-  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
   transition: all 0.2s ease;
   color: #ffffff;
-  display: block;
   text-decoration: none;
   font-weight: 500;
 }
 
 .navbar-left a {
-  float: left;
   font-size: 16px;
 }
 
 .navbar-right a {
-  float: right;
   font-size: 14px;
 }
 
@@ -70,7 +86,8 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-left: 24px;
+  padding: 0 24px;
+  height: 64px;
 }
 
 #brand span {
@@ -79,33 +96,37 @@ a {
   line-height: 1;
 }
 
-/* Session & Dropdown */
+/* Session & Dropdown - IMPROVED ALIGNMENT */
 .ses {
   border: none;
-  float: right;
   background-color: transparent;
   color: #ffffff;
-  height: auto;
+  height: 64px;
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
 }
 
 .dropd {
-  float: right;
-  background-color: #1c1f26;
-  color: #e4e4e7;
-  border: 1px solid #2d3748;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 8px 16px;
   font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .dropd:hover {
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
-  border-color: #0066ff;
-  background-color: #252930;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Sidebar - Modern Dark Design */
@@ -190,28 +211,28 @@ a {
   margin-left: auto;
 }
 
-/* Main Content */
+/* Main Content - IMPROVED SPACING */
 #main {
   transition: margin-left 0.3s ease;
   margin-top: 80px;
   min-height: calc(100vh - 80px);
+  padding: 0;
 }
 
 .main-container {
-  padding: 24px;
+  padding: 32px;
   max-width: 1400px;
 }
 
-/* Cards - Modern Dark Design */
+/* Cards - Modern Dark Design - INCREASED SPACING */
 .card {
   background-color: #1c1f26;
-  margin: 12px 0;
+  margin: 20px 0;
   border-radius: 16px;
   border: 1px solid #2d3748;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 20px; /* Trying to add space between the cards*/
 }
 
 .card:hover {
@@ -221,7 +242,7 @@ a {
 }
 
 .card-header {
-  padding: 20px 24px;
+  padding: 24px;
   margin-bottom: 0;
   border-bottom: 1px solid #2d3748;
   background-color: #16181d;
@@ -232,12 +253,12 @@ a {
 }
 
 .card-body {
-  padding: 24px;
+  padding: 28px;
   margin-bottom: 0;
 }
 
 .card-footer {
-  padding: 16px 24px;
+  padding: 20px 24px;
   background-color: #16181d;
   border-top: 1px solid #2d3748;
 }
@@ -250,11 +271,11 @@ a {
   color: #93c5fd;
 }
 
-/* Box Components */
+/* Box Components - INCREASED SPACING */
 .box {
   background-color: #1c1f26;
-  padding: 24px;
-  margin: 12px 0;
+  padding: 28px;
+  margin: 20px 0;
   border-radius: 16px;
   color: #e4e4e7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -280,8 +301,14 @@ a {
 
 .box h1, .box h3 {
   padding: 0;
-  margin: 0;
+  margin: 0 0 16px 0;
   color: #e4e4e7;
+}
+
+.box-group {
+  display: table;
+  width: 100%;
+  margin: 12px 0;
 }
 
 .box-group > div {
@@ -302,7 +329,7 @@ a {
   justify-content: center;
   user-select: none;
   padding: 0;
-  margin: 8px;
+  margin: 12px;
   border-radius: 16px;
   border: 1px solid #2d3748;
   vertical-align: middle;
@@ -319,7 +346,7 @@ a {
 }
 
 .box-group-area {
-  padding: 8px;
+  padding: 12px;
 }
 
 /* Buttons - Modern Dark Design */
@@ -708,6 +735,7 @@ button {
   font-weight: 500;
   background-color: #1c1f26;
   color: #e4e4e7;
+  margin: 16px 0;
 }
 
 /* Notifications */
@@ -898,6 +926,18 @@ button {
   [class*=col-] {
     width: 100%;
   }
+
+  .main-container {
+    padding: 16px;
+  }
+
+  .card {
+    margin: 16px 0;
+  }
+
+  .box {
+    margin: 16px 0;
+  }
 }
 
 @media (max-width: 576px) {
@@ -912,7 +952,16 @@ button {
   }
   
   .card-body {
-    padding: 16px;
+    padding: 20px;
+  }
+
+  .card {
+    margin: 16px 0;
+  }
+
+  .box {
+    padding: 20px;
+    margin: 16px 0;
   }
 }
 
