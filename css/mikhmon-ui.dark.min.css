@@ -1,4 +1,4 @@
-/* Modern Router Manager Styles - Dark Mode - Improved Spacing */
+/* Modern Router Manager Styles - Dark Mode */
 
 /* Base & Typography */
 body {
@@ -43,6 +43,7 @@ a {
   display: flex;
   align-items: center;
   height: 100%;
+  float: left;
 }
 
 .navbar-right {
@@ -51,24 +52,28 @@ a {
   height: 100%;
   gap: 8px;
   padding-right: 16px;
+  float: right;
 }
 
 .navbar-left a, .navbar-right a {
   display: flex;
   align-items: center;
-  height: 64px;
-  padding: 0 20px;
+  text-align: center;
+  padding: 20px 20px;
   transition: all 0.2s ease;
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
+  height: 64px;
 }
 
 .navbar-left a {
+  float: left;
   font-size: 16px;
 }
 
 .navbar-right a {
+  float: right;
   font-size: 14px;
 }
 
@@ -86,7 +91,7 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 24px;
+  padding-left: 24px;
   height: 64px;
 }
 
@@ -99,9 +104,10 @@ a {
 /* Session & Dropdown - IMPROVED ALIGNMENT */
 .ses {
   border: none;
+  float: right;
   background-color: transparent;
   color: #ffffff;
-  height: 64px;
+  height: auto;
   font-size: 14px;
   font-weight: 500;
   display: flex;
@@ -110,6 +116,7 @@ a {
 }
 
 .dropd {
+  float: right;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -129,7 +136,7 @@ a {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Sidebar - Modern Dark Design */
+/* Sidebar - UNCHANGED */
 .sidenav {
   height: 100%;
   width: 0;
@@ -211,12 +218,11 @@ a {
   margin-left: auto;
 }
 
-/* Main Content - IMPROVED SPACING */
+/* Main Content - IMPROVED SPACING FOR DASHBOARD */
 #main {
   transition: margin-left 0.3s ease;
   margin-top: 80px;
   min-height: calc(100vh - 80px);
-  padding: 0;
 }
 
 .main-container {
@@ -224,10 +230,10 @@ a {
   max-width: 1400px;
 }
 
-/* Cards - Modern Dark Design - INCREASED SPACING */
+/* Cards - INCREASED SPACING BETWEEN CARDS */
 .card {
   background-color: #1c1f26;
-  margin: 20px 0;
+  margin: 24px 0;
   border-radius: 16px;
   border: 1px solid #2d3748;
   overflow: hidden;
@@ -275,7 +281,7 @@ a {
 .box {
   background-color: #1c1f26;
   padding: 28px;
-  margin: 20px 0;
+  margin: 24px 0;
   border-radius: 16px;
   color: #e4e4e7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -301,14 +307,8 @@ a {
 
 .box h1, .box h3 {
   padding: 0;
-  margin: 0 0 16px 0;
+  margin: 0;
   color: #e4e4e7;
-}
-
-.box-group {
-  display: table;
-  width: 100%;
-  margin: 12px 0;
 }
 
 .box-group > div {
@@ -329,7 +329,7 @@ a {
   justify-content: center;
   user-select: none;
   padding: 0;
-  margin: 12px;
+  margin: 8px;
   border-radius: 16px;
   border: 1px solid #2d3748;
   vertical-align: middle;
@@ -346,7 +346,7 @@ a {
 }
 
 .box-group-area {
-  padding: 12px;
+  padding: 8px;
 }
 
 /* Buttons - Modern Dark Design */
@@ -735,7 +735,6 @@ button {
   font-weight: 500;
   background-color: #1c1f26;
   color: #e4e4e7;
-  margin: 16px 0;
 }
 
 /* Notifications */
@@ -928,15 +927,7 @@ button {
   }
 
   .main-container {
-    padding: 16px;
-  }
-
-  .card {
-    margin: 16px 0;
-  }
-
-  .box {
-    margin: 16px 0;
+    padding: 20px;
   }
 }
 
@@ -952,16 +943,7 @@ button {
   }
   
   .card-body {
-    padding: 20px;
-  }
-
-  .card {
-    margin: 16px 0;
-  }
-
-  .box {
-    padding: 20px;
-    margin: 16px 0;
+    padding: 16px;
   }
 }
 
